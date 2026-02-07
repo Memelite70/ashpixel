@@ -96,4 +96,10 @@ async function a(page, options = {}) {
       console.error(err);
     }
   }
+  refreshAds();
+}
+function refreshAds() {
+  if (window.adsbygoogle) {
+    adsbygoogle.push({});
+  }
 }
