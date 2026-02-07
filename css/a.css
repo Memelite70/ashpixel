@@ -437,8 +437,10 @@ body {
   padding: 6px;
 }
 .small{
-  font-size: 26px;
-  font-weight: 200;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 .gameinfo svg{
   width: 24px;
