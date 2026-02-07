@@ -20,27 +20,45 @@
   </script>
   <script>
     window.addEventListener("DOMContentLoaded", function() {
-      var button = document.getElementById("playGame");
-      button.addEventListener("click", function() {
-        var param = getUrlParameter('game');
-        if(param.includes('/gms/')){
-          param = param.replace('/gms/', 'https://15serge.github.io/');
-        }
-        if(param.includes('./static/')){
-          param = param.replace('./static/', 'https://prox.neongames.io/static/');
-        }
-        else if(param.includes('/static/')){
-          param = param.replace('/static/', 'https://prox.neongames.io/static/');
-        }
-        var gameframe = document.createElement("iframe");
-        gameframe.className = "game_frame";
-        gameframe.src = '' + param;
-        gameframe.style.opacity = "0";
-        gameframe.style.display = "block";
-        document.body.appendChild(gameframe);
-        setTimeout(function() {
-          gameframe.style.opacity = "1"
-        }, 10)
+      var param = getUrlParameter('game');
+      if(param.includes('/gms/')){
+        param = param.replace('/gms/', 'https://15serge.github.io/');
+      }
+      if(param.includes('./static/')){
+        param = param.replace('./static/', 'https://prox.neongames.io/static/');
+      }
+      else if(param.includes('/static/')){
+        param = param.replace('/static/', 'https://prox.neongames.io/static/');
+      }
+      var frame = document.getElementById('iframe');
+      iframe.style.zIndex = "-999999";
+      iframe.src=param;
+      
+      var button = document.getElementById('playGame');
+      button.addEventListener('click', function(){
+        iframe.style.opacity = "1";
+          var button = document.getElementById('playGame');
+        var bgImage = document.getElementById('bgImage');
+        var adNest = document.querySelector('.adnest');
+        var adNestChild = document.querySelector('.adnestchild');
+        var DisplayImg = document.querySelector('.displayImage');
+        setTimeout(function(){
+        button.style.opacity = "0";
+        bgImage.style.opacity = "0";
+        adNest.style.opacity = "0";
+        adNestChild.style.opacity = "0";
+        DisplayImg.style.opacity = "0";
+        }, 15);
+        setTimeout(function(){
+          button.style.display = "none";
+        bgImage.style.display = "none";
+        adNest.style.display = "none";
+        DisplayImg.style.display = "none";
+        }, 500);
+        setTimeout(function(){
+        iframe.style.zIndex = "10000";
+        iframe.contentWindow.focus();
+        }, 300);
       })
     })
     document.addEventListener('contextmenu', function(event) {
@@ -92,7 +110,7 @@
       width: 100%;
       height: 100%;
       filter: blur(20px);
-      opacity: 0.5;
+      opacity: 1;
       position: absolute;
       top: 0;
       left: 0;
@@ -119,19 +137,13 @@
       position: fixed;
       top: 0;
       left: 0;
-      bottom: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       border: none;
       margin: 0;
       padding: 0;
       overflow: hidden;
-      z-index: 999999;
-      opacity: 0;
-      background-color: #222222;
-      transition: 0.18s ease;
-      display: none;
+      transition-duration: 0.2s;
     }
 
     .playGame {
@@ -314,8 +326,9 @@
   </style>
 </head>
 <body>
+  <iframe id="iframe" class="game_frame" style="opacity: 0;"></iframe>
   <button id="playGame" class="playGame">PLAY&#9658;</button>
-  <img class="bgImage" id="bgImage" src="" onerror="this.src='/globe.svg'">
+  <img class="bgImage" id="bgImage" src="">
   <div class="adnest"></div>
   <div class="adnestchild">
     <h1 class="gameName">
