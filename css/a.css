@@ -89,9 +89,9 @@ body {
 .navigationItem.active,
 .navigationItem:hover {
   transition-delay: 0.1s;
+  background: #222222;
   margin-left: 8px;
-  background: linear-gradient(90deg, #1f2937, transparent);
-  border-left: 3px solid #4ade80;
+  border-left: 3px solid #1f2937;
 }
 
 .navigationItem.active .navItemSrc,
@@ -429,6 +429,12 @@ body {
   height: 40px;
   position: relative;
   top: -10px;
+  display: flex;
+  gap: 8px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+  padding: 6px;
 }
 .small{
   font-size: 26px;
