@@ -382,69 +382,82 @@ body {
   background-color: #222;
   filter: brightness(0.6) blur(2px);
 }
-.gamepagecontainer{
-  display: flex;
+.gamepagecontainer {
+  display: grid;
+  grid-template-columns: minmax(800px, 1fr) 300px;
+  gap: 25px;
   width: 100%;
-  height: 70%;
+  align-items: start;
 }
-.gamepage{
-  display: inline-block;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  max-height: 800px;
-  height: calc(70% + 40px);
-  position: relative;
-  background: #000000;
+
+/* === GAME FRAME === */
+.gamepage {
   margin-left: 25px;
   margin-top: 25px;
 }
-.framediv{
-  max-width: 1155.55555556px;
-  width: 50%;
-  border: 2px solid #222;
-  padding-bottom: 15px;
+
+.framediv {
+  width: 100%;
+  max-width: 1156px;
   background: #0b0b0b;
+  border: 2px solid #222;
   border-radius: 16px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.6);
   padding: 12px;
+  position: relative;
 }
-.sidediv{
-  flex: 1;
-  background: #222;
-  margin-right: 25px;
-  max-width: 300px;
-  padding-bottom: 5px;
-}
-.framediv iframe{
-  border: none;
+
+/* === IFRAME === */
+.framediv iframe {
   width: 100%;
-  height: calc(100% - 40px);
+  height: 550px;
+  border: none;
+  border-radius: 12px;
+}
+
+/* === GAME INFO BAR === */
+.gameinfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  margin-top: 8px;
+}
+
+.small {
+  font-size: 26px;
+  font-weight: 300;
   margin: 0;
 }
-.gameinfo{
-  width: 100%;
-  height: 40px;
-  position: relative;
-  top: -13px;
-}
-.small{
-  font-size: 26px;
-  font-weight: 200;
-}
-.gameinfo svg{
+
+/* === FULLSCREEN ICON === */
+.gameinfo svg {
   width: 24px;
   height: 24px;
-  margin: 7px;
   cursor: pointer;
-  float: right;
-  transition: 0.1s ease;
-  position: relative;
-  top: -55px;
+  transition: transform 0.15s ease;
 }
-.gameinfo svg:hover{
-  scale: 1.2;
+
+.gameinfo svg:hover {
+  transform: scale(1.2);
+}
+
+.sidediv {
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
+  min-height: 600px;
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 10px;
+  margin-top: 25px;
+  overflow: hidden;
+}
+
+.sidediv ins,
+.sidediv iframe {
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 
