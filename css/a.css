@@ -429,18 +429,10 @@ body {
   height: 40px;
   position: relative;
   top: -10px;
-  display: flex;
-  gap: 8px;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(6px);
-  border-radius: 10px;
-  padding: 6px;
 }
 .small{
-
-  font-size: 1.4rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  font-size: 26px;
+  font-weight: 200;
 }
 .gameinfo svg{
   width: 24px;
