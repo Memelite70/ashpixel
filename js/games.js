@@ -108,14 +108,19 @@ function loadGames(list, divid) {
     div.appendChild(title);
 
     div.onclick = () => {
-      const e = (g.title || "").replace(/\s+/g, "-").replace(/:/g, "");
-      const ee = e.replace(/---/g, "-");
+const safeTitle = encodeURIComponent(
+  (g.title || "")
+    .trim()
+    .replace(/\./g, "-")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+);
       const navLinks = document.querySelectorAll('.navigationItem');
       navLinks.forEach(link => {
         link.classList.remove('active');
       });
       addToRecentGames(g); 
-      a(`/g/${ee}`);
+      a(`/g/${safeTitle}`);
     };
 
     frag.appendChild(div);

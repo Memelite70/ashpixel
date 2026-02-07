@@ -1,6 +1,5 @@
 let navToken = 0;
 let currentAbort = null;
-/*sidenav controls are in startup.js*/
 async function fetchHTML(url, signal) {
   const res = await fetch(url, { signal });
   if (!res.ok) throw new Error(`Failed to load ${url}`);
@@ -16,7 +15,7 @@ async function renderFromHTML(
   const parser = new DOMParser();
   const doc = parser.parseFromString(html, "text/html");
 
-  const target = document.getElementById("app");/*change to whatever div id i need*/
+  const target = document.getElementById("app");
   if (!target) throw new Error("#app container not found");
 
   target.style.transition = `opacity ${transitionDuration}ms`;
@@ -72,7 +71,6 @@ function executeScript(oldScript, token) {
     document.body.appendChild(script);
   });
 }
-/*the full csr function*/
 async function a(page, options = {}) {
   if (location.pathname.endsWith(page)) return;
 

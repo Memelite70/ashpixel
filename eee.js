@@ -2299,7 +2299,8 @@ const games = [
 ];
 
 games.forEach(game => {
-  const fileName1 = game.title.replace(/\s+/g, '-') + '.html';
+  const fileName2 = game.title.replace(/\./g, "-");
+  const fileName1 = fileName2.replace(/\s+/g, '-') + '.html';
   const fileName = fileName1.replace('---', '-');
   const fileContent = `
 
