@@ -2308,6 +2308,7 @@ games.forEach(game => {
 <html lang="en">
 
 <head>
+  <meta name="description" content="${game.title} game online  - AshPixel: Play instantly in fullscreen browser, no downloads, no ads. Explore and enjoy various gaming experiences now!">
   <script src="/js/games.js"></script>
   <script src="/js/csr.js"></script>
   <meta charset="UTF-8" />
@@ -2632,7 +2633,7 @@ games.forEach(game => {
 <div id="frame" class="gamepage framediv">
   <iframe id="gameiframe" src="/loader.html?game=${game.url}&img=${game.image}&name=${game.title}"></iframe>
   <div class="gameinfo">
-    <h1 class="small">${game.title}</h1>
+    <h1 class="small" id="gameTitleh1">${game.title}</h1>
     <svg onclick="fullscreen('gameiframe')" fill="#ffffff" height="24px" width="24px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-38.5 -38.5 461.97 461.97" xml:space="preserve" stroke="#ffffff" stroke-width="16.553710000000002">
 
     <g stroke-width="0"/>

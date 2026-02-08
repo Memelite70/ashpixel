@@ -106,21 +106,28 @@ function loadGames(list, divid) {
     title.style.marginBottom = "4px";
     title.textContent = g.title;
     div.appendChild(title);
-
+    const safeTitle = encodeURIComponent(
+       (g.title || "")
+        .trim()
+        .replace(/\./g, "-")
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-")
+    );
     div.onclick = () => {
-const safeTitle = encodeURIComponent(
-  (g.title || "")
-    .trim()
-    .replace(/\./g, "-")
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-")
-);
+      var iframe = document.getElementById('gameiframe');
+      if(iframe){
+        iframe.src=`/loader.html?game=${g.url}&img=${g.image}&name=${g.title}`;
+        document.getElementById('gameTitleh1').innerHTML = g.title;
+        history.pushState(null, "", `/g/${safeTitle}`);
+      }
+      else{
+      a(`/g/${safeTitle}`);
+      }
+      addToRecentGames(g); 
       const navLinks = document.querySelectorAll('.navigationItem');
       navLinks.forEach(link => {
         link.classList.remove('active');
       });
-      addToRecentGames(g); 
-      a(`/g/${safeTitle}`);
     };
 
     frag.appendChild(div);
