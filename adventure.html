@@ -18,7 +18,7 @@
   <script src="js/app.js"></script>
   <div id="sideNav">
     <span class="logo">
-      <h1>All | AshPXL Games</h1>
+      <h1>Adventure | AshPXL Games</h1>
     </span>
     <div class="navigationItem" onclick="a('/')">
       <div class="navItemSrc"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -32,7 +32,7 @@
         <h1>Home</h1>
       </div>
     </div>
-    <div class="navigationItem active allgames" onclick="a('/games')">
+    <div class="navigationItem allgames" onclick="a('/games')">
       <div class="navItemSrc"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
           fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
           data-lucide="gamepad-2" aria-hidden="true" class="lucide lucide-gamepad-2">
@@ -68,9 +68,9 @@
       </div>
     </div>
     <hr>
-    <div class="navigationItem" onclick="a('/action')">
+    <div class="navigationItem active" onclick="a('/adventure')">
       <div class="navItemSrc"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="none" stroke="#c7c7c7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1039999999999999"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g> <path d="m2.75 9.25 1.5 2.5 2 1.5m-4.5 0 1 1m1.5-2.5-1.5 1.5m3-1 8.5-8.5v-2h-2l-8.5 8.5"></path> <path d="m10.25 12.25-2.25-2.25m2-2 2.25 2.25m1-1-1.5 2.5-2 1.5m4.5 0-1 1m-1.5-2.5 1.5 1.5m-7.25-5.25-4.25-4.25v-2h2l4.25 4.25"></path> </g></svg>
-        <h1>Action</h1>
+        <h1>Adventure</h1>
       </div>
     </div>
     <div class="navigationItem" onclick="a('/adventure')">
@@ -135,8 +135,8 @@
   </div>
   <div id="app">
     <center>
-      <h1 class="gameLabel">All Games</h1>
-      <div id="games" data-genre="all"></div>
+      <h1 class="gameLabel">Adventure Games</h1>
+      <div id="games" data-genre="adventure"></div>
     </center>
   </div>
   <script src="/js/gamePromise.js"></script>
