@@ -92,12 +92,12 @@ function loadGames(list, divid) {
 
   const frag = document.createDocumentFragment();
   sorted.forEach(g => {
-    const div = document.createElement("div");
-    div.className = "game";
+    const div = document.createElement("a");
+    div.className = `game ${g.title} unblocked AshPXL`;
 
     const img = document.createElement("img");
     img.src = g.image;
-    img.alt = g.title || "game";
+    img.alt = `${g.title} unblocked AshPXL` || "game";
     img.loading = "lazy";
     div.appendChild(img);
 
@@ -113,6 +113,7 @@ function loadGames(list, divid) {
         .replace(/\s+/g, "-")
         .replace(/-+/g, "-")
     );
+    div.href=`/g/${safeTitle}`;
     div.onclick = () => {
       var iframe = document.getElementById('gameiframe');
       if(iframe){
